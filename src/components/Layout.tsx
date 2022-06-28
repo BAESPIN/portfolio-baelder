@@ -1,42 +1,79 @@
 import {FC, ReactNode, useState} from 'react';
-import {styled, Box} from '@mui/material';
+import React from 'react';
+import {styled, Box, Grid} from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 import {Header} from './Header';
+import {Main} from './Main';
+import {Navigation} from './Navigation';
 import {Footer} from './Footer';
 
 import {FOOTER_HEIGHT} from '../utils/constants';
-
-const LayoutWrapper = styled('div')`
-  min-height: 100vh;
-`;
+import {DRAWER_WIDTH} from '../utils/constants';
 
 const ContentWrapper = styled('div')`
   display: flex;
-  min-height: calc(100vh - ${FOOTER_HEIGHT}px);
 `;
 
 const DrawerHeader = styled('div')(({theme}) => ({
     padding: theme.spacing(0, 1), ...theme.mixins.toolbar,
 }));
 
-export const Layout: FC = () => {
+
+export const Layout = () => {
+
     return (
-        <LayoutWrapper>
-            <ContentWrapper>
-                <Box component="header">
-                    <Header/>
-                </Box>
+        <ContentWrapper>
+            <Box component="header">
+                <Header/>
+            </Box>
 
-                {/*<Navigation open={open} handleClose={toggleNavigation} />*/}
+            <Box component="main" >
+                <Main/>
+            </Box>
 
-                <Box component="main" sx={{flexGrow: 1, p: 3}}>
-                    <DrawerHeader/>
-                    {/*{children}*/}
-                </Box>
-            </ContentWrapper>
+            <Box component="nav" >
+                <Navigation/>
+            </Box>
+
             <Box component="footer">
                 <Footer />
             </Box>
-        </LayoutWrapper>
+        </ContentWrapper>
     );
 };
+
+// <React.Fragment>
+//     <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+//         <Grid item xs={8}>
+//             <Box component="header">
+//                 <Header/>
+//             </Box>
+//         </Grid>
+//         <Grid item xs={4}>
+//             <Box component="main" sx={{flexGrow: 1, p: 3}}>
+//                 {/*<DrawerHeader/>*/}
+//                 {/*{children}*/}
+//             </Box>
+//         </Grid>
+//         <Grid item xs={4}>
+//             <Box component="sidebar" sx={{flexGrow: 1, p: 3}}>
+//                 {/*<DrawerHeader/>*/}
+//                 {/*{children}*/}
+//             </Box>
+//         </Grid>
+//         <Grid item xs={8}>
+//             <Box component="footer">
+//                 <Footer />
+//             </Box>
+//         </Grid>
+//     </Grid>
+//
+//
+//
+//     {/*<Navigation open={open} handleClose={toggleNavigation} />*/}
+//
+//
+//
+// </React.Fragment>
+// );

@@ -3,8 +3,6 @@ import {CssBaseline, ThemeProvider} from '@mui/material';
 import {Layout} from './components/Layout';
 import {appTheme} from './styles/customTheme'
 
-import './App.css';
-
 const theme = appTheme();
 
 function App() {
@@ -13,7 +11,7 @@ function App() {
         <div className="App">
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <Layout></Layout>
+                    <Layout></Layout>
             </ThemeProvider>
         </div>
     );
