@@ -7,4 +7,5 @@ export const NAVIGATOR = "Navigator"
 
 // UI CONST
 export const FOOTER_HEIGHT = 100
-export const DRAWER_WIDTH = 240
+export const TOOLS_WIDTH = 240
+export const NAVIGATOR_WIDTH = 200

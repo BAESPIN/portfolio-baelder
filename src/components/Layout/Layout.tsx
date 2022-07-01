@@ -8,7 +8,7 @@ import {Tools} from './Tools/Tools';
 
 const ContentWrapper = styled('div')`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 

@@ -13,7 +13,7 @@ interface HeaderProps {
 export const Header = ({ toggleTools }: HeaderProps) => {
 
     return (
-        <Box component="header">
+        <Box component="header" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
             <AppBar position="fixed">
                 <Toolbar variant={"dense"}>
                     <MenuButton toggleTools={toggleTools}/>
