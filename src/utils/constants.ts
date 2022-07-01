@@ -1,5 +1,7 @@
 // APP TEXT
 export const TITLE = "Porftfolio Baelder"
+export const TOOLBAR = "Toolbar"
+export const NAVIGATOR = "Navigator"
 
 // UI TEXT
 

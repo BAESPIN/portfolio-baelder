@@ -1,12 +1,11 @@
-import React, {FC, ReactNode, useState} from "react";
-import {AppBar, Box, Toolbar, IconButton} from '@mui/material';
-import {DRAWER_WIDTH} from "../utils/constants";
+import React from "react";
+import {Box} from '@mui/material';
 import Typography from "@mui/material/Typography";
 
 export const Main = () => {
 
     return (
-        <Box sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${DRAWER_WIDTH}px)`}}}>
+        <Box component="main" >
             <Typography paragraph>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
@@ -34,6 +33,6 @@ export const Main = () => {
                 eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
                 posuere sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
-        </Box>
+        </Box >
     );
 };
