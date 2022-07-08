@@ -5,22 +5,26 @@ import {styled} from '@mui/material';
 import {Header} from './Header/Header';
 import {Main} from './Main/Main';
 import {Tools} from './Tools/Tools';
+import {Navigator} from './Navigator/Navigator';
 
 const ContentWrapper = styled('div')`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `;
 
 
 export const Layout = () => {
-    const [open, setOpen] = useState(false);
-    const toggleTools = () => setOpen((status) => !status);
+    const [openNavigator, setOpenNavigator] = useState(false);
+    const toggleNavigator = () => setOpenNavigator((status) => !status);
+    const [openTools, setOpenTools] = useState(false);
+    const toggleTools = () => setOpenTools((status) => !status);
 
     return (
         <ContentWrapper>
-            <Header toggleTools={toggleTools} />
-            <Tools open={open} handleClose={toggleTools} />
+            <Header toggleNavigator={toggleNavigator} toggleTools={toggleTools}/>
+            <Navigator open={openNavigator} handleClose={toggleNavigator}/>
             <Main/>
+            <Tools open={openTools} handleClose={toggleTools} />
         </ContentWrapper>
     );
 };

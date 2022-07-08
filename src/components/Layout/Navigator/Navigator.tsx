@@ -12,10 +12,10 @@ interface NavigatorProps {
 export const Navigator = ({ open, handleClose }: NavigatorProps) => {
 
     return (
-        <Box component="nav">
+        <Box component="nav" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
             <Drawer sx={{width: NAVIGATOR_WIDTH, flexShrink: 0, '& .MuiDrawer-paper': {width: NAVIGATOR_WIDTH, boxSizing: 'border-box'} }}
                     variant="persistent"
-                    anchor="right"
+                    anchor="left"
                     open={open}
                     onClose={handleClose}>
             </Drawer>
